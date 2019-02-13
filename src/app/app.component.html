@@ -1,0 +1,47 @@
+<div *ngIf="contentLocked" class="container">
+  <div class="flex">
+    <div class="loader">
+    </div>
+  </div>
+  <div class="load-text">
+    Loading ...
+  </div>
+</div>
+
+<div [style.opacity]="contentLocked === true ? 0 : 1" class=header [id]="activeRoute.snapshot['_routerState'].url.replace('/','').split('/')[0]">
+  <div class="typewriter">
+    <a id="typewriter" [routerLink]="'..'" >
+    </a>
+  </div>
+  <div class="clock">
+    <span id="clock">
+      {{ time }}
+    </span>
+  </div>
+  <div *ngIf="activeRegion === 'euromafia'" class="cart">
+    <i *ngIf="carelCount > 0" [matBadge]="carelCount" matBadgeOverlap="true" matBadgeColor="primary" class="material-icons shopping-cart" style="font-size:42px" routerLink="euromafia/checkout">
+      shopping_cart
+    </i>
+    <i *ngIf="carelCount === 0" class="material-icons shopping-cart" style="font-size:42px" routerLink="euromafia/checkout">
+      shopping_cart
+    </i>
+  </div>
+  <div *ngIf="activeRegion === 'root' || activeRegion === 'templebank'" class="bank" routerLink="templebank">
+  </div>
+</div>
+
+<div [style.opacity]="contentLocked === true ? 0 : 1" class="mainframe" [id]="activeRoute.snapshot['_routerState'].url.replace('/','').split('/')[0]">
+  <div class="scroller">
+    <router-outlet #o="outlet"></router-outlet>
+  </div>
+</div>
+
+<div [style.opacity]="contentLocked === true ? 0 : 1" class="footer" [style.display]="display" [id]="activeRoute.snapshot['_routerState'].url.replace('/','').split('/')[0].split('/')[0]">
+  <span id="footer">
+    {{ footer }}<span id="piva">02742930908</span>
+  </span>
+</div>
+
+<div [style.opacity]="contentLocked === true ? 0 : 1" [id]="activeRoute.snapshot['_routerState'].url.replace('/','').split('/')[0]">
+  <img id="ssclogo" src="../assets/images/monogramframes_77_0_ssc.svg" alt="" routerLink="/">
+</div>

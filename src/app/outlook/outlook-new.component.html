@@ -1,0 +1,22 @@
+<div class="EuroNewFormContainer">
+  <mat-form-field>
+    <select matNativeControl placeholder="Select Type" [(ngModel)]="type" name="typeSelector">
+      <!-- <option value="" selected></option> -->
+      <option *ngFor="let ts of typeSelector" [value]="ts.value">
+        {{ts.viewValue}}
+      </option>
+    </select>
+  </mat-form-field>
+  <mat-form-field class="captionOL">
+    <textarea matInput placeholder="Caption" [(ngModel)]="caption"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" class="coverButton" type="button" md-button (click)="imgFileInput.click()" aria-placeholder="Add Image" [value]="mediaSrc">
+    <span #coverPlaceH *ngIf="!mediaSrc">Upload Media</span>
+    <img *ngIf="mediaSrc" id="coverEuroCreate" [src]="mediaSrc" [alt]="caption" />
+  </button>
+  <input hidden type="file" #imgFileInput (change)="previewImage($event)"/>
+
+  <!-- <div class="btnContainerNewTape"></div> -->
+  <button mat-raised-button color="primary" class="btnNewEuro" type="button" (click)="save()">Save</button>
+</div>

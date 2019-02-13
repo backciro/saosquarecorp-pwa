@@ -1,0 +1,62 @@
+<div *ngIf="currentProduct === undefined" class="inside_container">
+  <div class="flex">
+    <div class="loader">
+    </div>
+  </div>
+  <div class="load-text">
+    Loading ...
+  </div>
+</div>
+<div class="fadebox" [hidden]="currentProduct === undefined">
+  <div class="titletab" id="euromafia_tt">detail</div>
+
+  <div class="productBox1" *ngIf="currentProduct">
+    <div class="productNameDetail">
+      {{currentProduct.productName}}
+    </div>
+    <span class="line"></span>
+
+    <div class="productInfoDetail" *ngIf="currentProduct">
+        Material:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100% Cotton <br>
+        Designed By:&nbsp;&nbsp;&nbsp;Famous Artist <br>
+        Made in:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Italy <br>
+        Collection:&nbsp;&nbsp;&nbsp;&nbsp;00101101 <br>
+        <br>
+        Producted with high specialized technique for garment protection.
+        made in an empty laboratory with some passion.
+    </div>
+
+    <span class="line"></span>
+    <!-- <mat-divider></mat-divider> -->
+
+
+    <div class="productSizePriceDetail" *ngIf="currentProduct">
+      <mat-form-field>
+        <select matNativeControl placeholder="choose a size" [(ngModel)]="selectedSize" name="size">
+          <!-- <option value="" selected></option> -->
+          <option *ngFor="let size of sizes" [value]="size.value">
+            {{size.viewValue}}
+          </option>
+        </select>
+      </mat-form-field>&nbsp;&nbsp;&nbsp;
+      $&nbsp;{{currentProduct.productPrice}}.00
+    </div>
+    <span class="line"></span>
+    <span class="addtocart">
+      <button mat-raised-button color="primary" [disabled]="selectedSize === undefined ||  selectedSize === '0'" (click)="addProductShopbag()" class="buttonBuy">Buy Now</button>
+    </span>
+
+  </div>
+
+  <div class="productImagesDetail" *ngIf="currentProduct">
+    <img *ngFor="let img of currentProduct.productImages" [src]="img.imgSrc" />
+  </div>
+
+
+  <div class="barcodeContainer" *ngIf="currentProduct">
+    <ngx-barcode [bc-value]="barcode" [bc-display-value]="true" [bc-element-type]="'svg'" [bc-height]="32" [bc-width]="2" [bc-font-size]="12" [bc-margin-top]="30" [bc-margin-left]="12" [bc-line-color]="'#353232'" [bc-background]="'#ffffff00'" [routerLink]="'..'" [style.cursor]="'pointer'">
+    </ngx-barcode>
+  </div>
+
+  <!-- <app-lava-lamp></app-lava-lamp> -->
+</div>

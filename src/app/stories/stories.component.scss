@@ -1,0 +1,90 @@
+body {
+  background-color: inherit;
+}
+
+#stories {
+  background-color: rgba(55, 153, 239, 0.795);
+
+
+  transition: background .32s ease-out;
+  -webkit-transition: background .32s ease-out;
+  -moz-transition: background .32s ease-out;
+  -ms-transition: background .32s ease-out;
+  -o-transition: background .32s ease-out;
+
+  &>.typewriter>a {
+    font-family: styled;
+    animation: color_change .2s;
+    color: invert(darken(whitesmoke, 15%));
+  }
+
+  &>.clock {
+    animation: color_change .2s;
+    color: invert(darken(whitesmoke, 15%));
+  }
+  &>span {
+    animation: color_change .2s;
+    color: invert(darken(whitesmoke, 15%));
+  }
+  &>#ssclogo {
+    filter: invert(0%);
+  }
+}
+
+.headercard {
+  font-family: crook;
+  font-size: 18px;
+
+
+  &:hover{
+    cursor: pointer;
+    background-color: rgba(196,196,196,.3);
+  }
+}
+
+mgl-timeline {
+  padding: 20px 0;
+  animation: .2s fadeIn;
+  animation-fill-mode: forwards;
+
+  opacity: 0;
+  transition: opacity .32s ease-out;
+  -webkit-transition: opacity .32s ease-out;
+  -moz-transition: opacity .32s ease-out;
+  -ms-transition: opacity .32s ease-out;
+  -o-transition: opacity .32s ease-out;
+
+  width: 85%;
+  margin: auto;
+}
+
+mgl-timeline-entry-content {
+  font-family: 'Courier New', Courier, monospace;
+
+  font-weight: 100;
+  text-align: justify;
+
+  img {
+    text-align: center;
+    max-width: 100%;
+    max-height: 600px;
+    position: relative;
+    margin: auto;
+    display: flex;
+  }
+}
+
+.mgl-timeline-line {
+  margin-top: 2px;
+  width: 5px !important;
+  background-color: invert(darken(whitesmoke, 15%)) !important;
+}
+
+.titletab {
+  color: rgb(54, 50, 50);
+  background-color: rgba(55, 153, 239, 0.9);
+}
+.color {
+  background-color: rgba(241, 253, 80, .75);
+  z-index: 1000;
+}

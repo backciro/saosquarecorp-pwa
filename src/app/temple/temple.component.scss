@@ -1,0 +1,82 @@
+body {
+  background-color: inherit;
+}
+
+.titletab {
+  color: invert(rgb(54, 50, 50));
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.full-width {
+  width: 100% !important;
+}
+.loginCard {
+  background-color: transparent;
+  color: #c9cdcd;
+  font-family: styled;
+  text-align: center;
+  width: 85%;
+
+  margin: auto;
+  margin-top: 50px;
+
+
+  .loginHeader {
+    justify-content: center;
+  }
+
+  .loginForm>table {
+    margin: auto;
+    filter: invert(94%);
+    font-family: styled;
+
+    label {
+      font-family: styled;
+      filter: invert(100%);
+    }
+
+    input {
+      color: rgb(54, 50, 50);
+      font-family: styled;
+
+    }
+  }
+
+  .mat-spinner {
+    display: block;
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    left: 0%;
+    right: 0%;
+    top: 75%;
+    margin: auto;
+    filter: invert(100%);
+  }
+
+  button {
+    line-height: 2.5;
+    margin-bottom: 20px;
+    width: 98%;
+    background-color: rgba(251, 242, 247,.8);
+    font-family: inherit;
+    font-weight: 900;
+
+    &:hover {
+      background-color: rgba(251, 242, 247, 1);
+    }
+  }
+}
+
+@media screen and (max-width:555px) {
+  .loginCard {
+    background-color: transparent;
+    color: #c9cdcd;
+    font-family: styled;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+
+  }
+}

@@ -1,0 +1,18 @@
+<div *ngIf="lockContent" class="inside_container">
+  <div class="flex">
+    <div class="loader">
+    </div>
+  </div>
+  <div class="load-text_inside">
+    Loading ...
+  </div>
+</div>
+
+<div [hidden]="lockContent" class="fadebox">
+  <div class="titletab">outlook</div>
+
+  <app-smart-playlist *ngIf="playlist" [playlist]="playlist"></app-smart-playlist>
+
+  <app-smart-gallery *ngIf="images" [images]="images"></app-smart-gallery>
+
+</div>

@@ -1,0 +1,36 @@
+<div class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
+  <swiper *ngIf="type == 'component' && show && products" class="swiper-container" fxFlex="auto" [config]="config" [disabled]="disabled" (indexChange)="onIndexChange($event)" (mousewheel)="onSwiperEvent($event)">
+    <div *ngFor="let prod of products; let i = index;" class="swiper-slide">
+      <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill style="filter:blur(0px);">
+        <div class="no_blur">
+          <div class="slideImgContainer" (click)="onImgClick(prod)">
+            <div class="barcode">
+              <ngx-barcode
+                [bc-value]="prod.id"
+                [bc-display-value]="true"
+                [bc-element-type]="'svg'"
+                [bc-height]="42" [bc-font-size]="12"
+                [bc-margin-top]="34" [bc-margin-left]="12"
+                [bc-line-color]="'#353232'"
+                [bc-background]="'#ffffff00'"
+                [routerLink]="prod.id"
+                [style.cursor]="'pointer'"></ngx-barcode>
+            </div>
+            <div class="monogram"></div>
+            <div class="infos" [routerLink]="prod.id">
+              custom model&nbsp;<br />
+              price : 99 $&nbsp;
+            </div>
+            <div class="productName" [routerLink]="prod.id">
+              {{prod.productName}}
+            </div>
+            <div class="prodImg">
+              <img class="slideImg" [src]="prod.imageSrc">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </swiper>
+
+</div>

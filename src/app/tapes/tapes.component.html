@@ -1,0 +1,79 @@
+<div *ngIf="lockContent" class="inside_container">
+  <div class="flex">
+    <div class="loader">
+    </div>
+  </div>
+  <div class="load-text">
+    Loading ...
+  </div>
+</div>
+
+<div class="fadebox" *ngIf="!lockContent">
+  <div class="titletab">tapes</div>
+
+  <div class="player">
+    <div id="info" [class]="'info ' + isPlaying()">
+      <span class="artist">{{currTrack.tape.artistTrack}}</span>
+      <span class="name">{{currTrack.tape.titleTrack}}</span>
+      <div class="progress-bar">
+        <div id="bar" class="bar" [style.width]="getProgress()"></div>
+      </div>
+    </div>
+    <div id="control-panel" [class]="'control-panel ' + isPlaying()">
+      <div class="album-art"></div>
+      <div class="controls">
+        <div class="rwm" (click)="tenSec('-')"></div>
+        <div id="play" class="play" (click)="play()"></div>
+        <div class="ffw" (click)="tenSec('+')"></div>
+      </div>
+    </div>
+    <div id="extra-panel" [class]="'extra-panel ' + isPlaying()">
+      <div class="extra-controls">
+        <div class="back" (click)="scaleTrack(-1)"></div>
+        <div class="next" (click)="scaleTrack(1)"></div>
+      </div>
+    </div>
+  </div>
+
+  <app-visualizer *ngIf="currTrack" #visualizer [waveForm]="waveform" [isPlaying]="!currTrack.playingTrack.paused" (animationChange)="updateAudioData($event)">
+  </app-visualizer>
+
+  <div class="album__box" *ngIf="currTrack">
+
+    <div *ngFor="let alb of albumBox" [class]="albumClass(alb.id)" [id]="alb.artistTrack + ' - ' + alb.titleTrack">
+      <div class="album__cover" (click)="dataClick(alb.id)" id="a_cover" data-cover>
+        <img [src]="alb.imageUrl" style="
+          width: inherit;
+          height: inherit;
+          border-radius:inherit">
+      </div>
+      <div class="vinyl">
+        <div class="vinyl__shadow">
+        </div>
+        <div class="vinyl__circle">
+          <div class="vinyl__center">
+          </div>
+        </div>
+      </div>
+      <div class="dlbox">
+        <div class="dlbox__shadow">
+          <span class="albumTrack">{{alb.titleTrack}}</span>
+          <span class="artistTrack">{{alb.artistTrack}}</span>
+          <button mat-raised-button color="primary" (click)="downloadContent(alb.id)" style="
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin: auto;
+            top: 85%;
+            line-height: 2;">Download NOW</button>
+        </div>
+        <div class="dlbox__circle">
+            <div class="dlbox__center">
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </div>
+
+</div>

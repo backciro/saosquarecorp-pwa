@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": "./dist/saosquarecorp/",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}

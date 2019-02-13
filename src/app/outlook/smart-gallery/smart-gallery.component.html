@@ -1,0 +1,16 @@
+<ngx-image-gallery
+  #ngxImageGallery
+  [images]="images"
+  [conf]="conf"
+  (onOpen)="galleryOpened($event)"
+  (onClose)="galleryClosed()"
+  (onImageClicked)="galleryImageClicked($event)"
+  (onImageChange)="galleryImageChanged($event)">
+</ngx-image-gallery>
+
+<div class="btnGallery type-1">
+  <a class="btn btn-3" (click)="openGallery()">
+    <span class="txt">Open Image Gallery</span>
+    <span class="round"><i class="fas fa-chevron-right"></i></span>
+  </a>
+</div>

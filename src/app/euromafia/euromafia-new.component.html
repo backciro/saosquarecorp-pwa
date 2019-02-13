@@ -1,0 +1,26 @@
+<div class="EuroNewFormContainer">
+  <mat-form-field class="nameEM">
+    <input matInput [placeholder]="'Product Name'" [(ngModel)]="productName">
+  </mat-form-field>
+  <mat-form-field class="descriptionEM">
+    <textarea matInput [placeholder]="'Description'" [(ngModel)]="productDescription"></textarea>
+  </mat-form-field>
+  <mat-form-field class="priceEM">
+    <input matInput type="number" [placeholder]="'Price'" [(ngModel)]="productPrice">
+  </mat-form-field>
+  <mat-form-field class="quantityEM">
+    <input matInput type="number" [placeholder]="'Qty'" [(ngModel)]="quantityAvailable">
+  </mat-form-field>
+  <mat-form-field class="sizeEM">
+    <input matInput placeholder="Sizes (S;M;L;XL)" [(ngModel)]="sizeAvailable">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" class="coverButton" type="button" md-button (click)="imgFileInput.click()" aria-placeholder="Add Image" [value]="imageSrc">
+    <span #coverPlaceH *ngIf="!imageSrc">Add Picture</span>
+    <img *ngIf="imageSrc" id="coverEuroCreate" [src]="imageSrc" [alt]="productName" />
+  </button>
+  <input hidden type="file" #imgFileInput (change)="previewImage($event)"/>
+
+  <!-- <div class="btnContainerNewTape"></div> -->
+  <button mat-raised-button color="primary" class="btnNewEuro" type="button" (click)="save()">Save</button>
+</div>

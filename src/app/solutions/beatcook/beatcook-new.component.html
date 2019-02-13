@@ -1,0 +1,28 @@
+<div class="BeatNewFormContainer">
+  <mat-form-field>
+    <select matNativeControl placeholder="Select Genre" name="typeSelector">
+      <option value="">
+      </option>
+      <option value="">
+      </option>
+    </select>
+  </mat-form-field>
+  <mat-form-field class="titleBC">
+    <input matInput placeholder="Beat Title" [(ngModel)]="title">
+  </mat-form-field>
+  <mat-form-field class="priceBC">
+    <input matInput type="number" placeholder="Beat Price" [(ngModel)]="price">
+  </mat-form-field>
+  <mat-form-field class="authorBC">
+    <input matInput placeholder="Beat Author" [(ngModel)]="author">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" class="coverButton" type="button" md-button (click)="imgFileInput.click()" aria-placeholder="Add Image" [value]="mediaSrc">
+    <span #coverPlaceH *ngIf="!mediaSrc">Upload Beat</span>
+    <img *ngIf="mediaSrc" id="coverEuroCreate" [src]="mediaSrc" [alt]="title" />
+  </button>
+  <input hidden type="file" #imgFileInput (change)="previewImage($event)"/>
+
+  <!-- <div class="btnContainerNewTape"></div> -->
+  <button mat-raised-button color="primary" class="btnNewEuro" type="button" (click)="save()">Save</button>
+</div>

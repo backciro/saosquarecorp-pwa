@@ -1,0 +1,120 @@
+#history{
+  background-color: rgba(196, 196, 196, .795);
+
+  transition: background .32s ease-out;
+  -webkit-transition: background .32s ease-out;
+  -moz-transition: background .32s ease-out;
+  -ms-transition: background .32s ease-out;
+  -o-transition: background .32s ease-out;
+  &>.typewriter>a {
+    font-family: styled;
+    animation: color_change .2s;
+    color: invert(darken(whitesmoke, $amount: 15%));
+  }
+
+  &>.clock {
+    animation: color_change .2s;
+    color: invert(darken(whitesmoke, 15%));
+  }
+  &>span {
+    animation: color_change .2s;
+    color: invert(darken(whitesmoke, 15%));
+  }
+  &>#ssclogo {
+    filter: invert(0%);
+  }
+
+}
+
+
+.titletab {
+  color: rgb(54, 50, 50);
+  background-color: rgba(196, 196, 196, .9);
+}
+
+.intro_description, .description {
+  width: 70%;
+  color: darken(whitesmoke, 85%);
+  font-family: styled;
+  font-size: 16px;
+  background: rgba(0,0,0,0.15);
+  padding: 10px 20px;
+  margin:auto;
+  margin-top: 3em;
+  text-align: justify;
+  &>p {
+    text-align: justify;
+  }
+}
+
+.description {
+  padding-top: 2.3em;
+  margin-bottom: 130px;
+}
+
+.gemlist {
+  width: 75%;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  align-content: center;
+  margin-top: 3em;
+
+  &>ul {
+    list-style: none;
+    margin: .77em;
+
+    text-align: center;
+    padding: 0;
+
+    left: 0;
+    right: 0;
+
+  }
+}
+.gems {
+  align-items: center;
+  text-align: center;
+  width: 23%;
+  height: calc(23%);
+  object-fit: scale-down;
+  border-radius: 100%;
+  float: left;
+  margin: auto;
+  margin: 1%;
+  padding-top: 1em;
+}
+
+.gems_not_enabled {
+  align-items: center;
+  text-align: center;
+  width: 11.5%;
+  height: calc(23%);
+  object-fit: scale-down;
+  border-radius: 100%;
+  float: left;
+  margin: auto;
+  margin: 1%;
+  padding-top: 1em;
+}
+
+/* If `animateFill: false` */
+
+.world {
+  width: 64px;
+  height: auto;
+
+  position: absolute;
+  right: 13.5vw;
+  margin-top: -4.9em;
+  transition: transform .2s;
+
+  &:hover{
+    transform: scale(1.5);
+    cursor: crosshair;
+  }
+}
+
+.xxx:hover {
+  text-decoration: line-through;
+}

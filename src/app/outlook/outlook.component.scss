@@ -1,0 +1,32 @@
+#outlook{
+  background-color: rgba(239, 199, 249, 0.795);
+
+  transition: background .32s ease-out;
+  -webkit-transition: background .32s ease-out;
+  -moz-transition: background .32s ease-out;
+  -ms-transition: background .32s ease-out;
+  -o-transition: background .32s ease-out;
+&>.typewriter>a {
+  font-family: styled;
+  animation: color_change .2s;
+  color: invert(darken(whitesmoke, $amount: 15%));
+}
+
+&>.clock {
+  animation: color_change .2s;
+  color: invert(darken(whitesmoke, 15%));
+}
+&>span {
+  animation: color_change .2s;
+  color: invert(darken(whitesmoke, 15%));
+}
+&>#ssclogo {
+  filter: invert(0%);
+}
+
+}
+
+.titletab {
+  color: rgb(54, 50, 50);
+  background-color: rgba(239, 199, 249, 0.9);
+}

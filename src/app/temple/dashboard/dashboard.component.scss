@@ -1,0 +1,99 @@
+body {
+  background-color: inherit;
+}
+
+.titletab {
+  color: invert(rgb(54, 50, 50));
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.dashCard {
+  display: block;
+  position: relative;
+  float: left;
+  padding: 10px 2% 0px 2%;
+  border-radius: 0px;
+  width: 21%;
+  // min-width: 150px;
+  margin: 0;
+  height: 36px;
+  text-align: center;
+  font-family: Courier;
+  margin-top: 11px;
+
+  transition: opacity .32s ease-out;
+  -webkit-transition: opacity .32s ease-out;
+  -moz-transition: opacity .32s ease-out;
+  -ms-transition: opacity .32s ease-out;
+  -o-transition: opacity .32s ease-out;
+
+  background-color: rgba(16, 0, 0, 0.195);
+
+  opacity: .77;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  mat-card-header, mat-card-title {
+    color: darken(whitesmoke, 15%) !important;
+    justify-content: center;
+    font-size: 13px;
+  }
+}
+.dashActive {
+  background: rgba(255, 245, 245, 0.195) !important;
+  pointer-events: none;
+
+  transition: background .32s ease-out;
+  -webkit-transition: background .32s ease-out;
+  -moz-transition: background .32s ease-out;
+  -ms-transition: background .32s ease-out;
+  -o-transition: background .32s ease-out;
+
+}
+@media screen and (max-width:555px) {
+  .loginCard {
+    background-color: transparent;
+    color: #c9cdcd;
+    font-family: styled;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
+
+  }
+}
+
+.dashCard_ {
+  background-color: rgba(65, 65, 65, 0.795) !important;
+
+  &:hover {
+    cursor: not-allowed;
+    opacity: .77;
+  }
+
+  mat-card-header, mat-card-title {
+    color: darken(whitesmoke, 15%) !important;
+  }
+}
+
+.logoutBtn {
+  position: fixed;
+  bottom: 50px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  background: transparent;
+  color: darken(whitesmoke, 15%);
+  font-family: Courier, monospace;
+
+  &:hover {
+    background-color: rgba(0,0,0,.1);
+  }
+
+}

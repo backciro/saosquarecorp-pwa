@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sao Square Corp</title>
+  <base href="/">
+
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="SSC">
+  <meta name="apple-mobile-web-app-title" content="SSC">
+  <meta name="theme-color" content="#422c74">
+  <meta name="msapplication-navbutton-color" content="#422c74">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-starturl" content="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="icon" type="image/ico" sizes="256x256" href="favicon.ico">
+  <link rel="apple-touch-icon" type="image/ico" sizes="256x256" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/images/background.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="256x256" href="assets/images/background.png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">  
+  <meta name="theme-color" content="#422c74">
+
+  <!-- LOADER -->
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(66, 44, 116, 0.795);
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .flex {
+      min-height: 60pt;
+    }
+
+    @keyframes loading {
+      0% {
+        width: 50pt;
+        height: 50pt;
+        margin-top: 0;
+      }
+
+      25% {
+        height: 4pt;
+        margin-top: 23pt;
+      }
+
+      50% {
+        width: 4pt;
+      }
+
+      75% {
+        width: 50pt;
+      }
+
+      100% {
+        width: 50pt;
+        height: 50pt;
+        margin-top: 0;
+      }
+    }
+
+    .loader {
+      width: 50pt;
+      height: 50pt;
+      border-radius: 100%;
+      border: #6767fa 4pt solid;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: transparent;
+      animation: loading 1s infinite;
+    }
+
+    .load-text {
+      padding-top: 15px;
+      text-align: center;
+      font: 14pt "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: hsl(240, 94%, 94%);
+    }
+  </style>
+
+</head>
+
+<body>
+  <app-root>
+    <div class="container">
+      <div class="flex">
+        <div class="loader">
+        </div>
+      </div>
+      <div class="load-text">
+        Loading ...
+      </div>
+    </div>
+  </app-root>
+</body>
+
+</html>

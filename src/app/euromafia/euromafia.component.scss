@@ -1,0 +1,62 @@
+#euromafia{
+  background-color: hsla(0, 100%, 67%, 0.795);
+
+  transition: background .32s ease-out;
+  -webkit-transition: background .32s ease-out;
+  -moz-transition: background .32s ease-out;
+  -ms-transition: background .32s ease-out;
+  -o-transition: background .32s ease-out;
+
+  &>.typewriter>a {
+    font-family: styled;
+    animation: color_change .2s;
+    color: invert(darken(whitesmoke, 15%));
+  }
+
+  &>.clock {
+    animation: color_change .2s;
+    color: invert(darken(whitesmoke, 15%));
+  }
+  &>span {
+    animation: color_change .2s;
+    color: invert(darken(whitesmoke, 15%));
+  }
+  &>#ssclogo {
+    filter: invert(0%);
+  }
+
+}
+
+#euromafia_tt {
+  background-color: hsla(0, 90%, 69%, 0.9);
+  color: invert(darken(whitesmoke, 15%));
+}
+
+.shopping-cart {
+  font-size: 42px;
+  position: fixed;
+  right: 23px;
+  top: 40px;
+  color: #353232;
+  transform: scale(1.2);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+@media screen and (max-width:555px) {
+  .shopping-cart {
+    font-size: 33px !important;
+    position: fixed;
+    right: 20px;
+    top: 44px;
+    color: #353232;
+    transform: scale(1.2);
+  }
+}
+
+@media screen and (max-width:555px) {
+  app-euromafia {
+    font-weight: 400 !important;
+  }
+}

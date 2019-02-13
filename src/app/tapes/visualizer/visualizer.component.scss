@@ -1,0 +1,43 @@
+.av_active_rect {
+  display: block;
+  float: left;
+  background: hsla(123, 66%, 83%, 0.795);
+  height: 3px;
+  width: calc(14.8vw - 2.4%);
+  border: .25vw solid  hsl(122, 66%, 83%);
+  padding: 0;
+  margin: 1%;
+  z-index: -100;
+  margin-bottom: 30px;
+
+  // animation-iteration-count: infinite;
+}
+
+.av_main_container {
+  transform: rotateX(-180deg);
+
+  width: 75%;
+  margin: auto;
+  -webkit-box-shadow: 0 10px 50px 50px hsla(123, 66%, 83%, 0.995);
+  -moz-box-shadow: 0 10px 50px 50px hsla(123, 66%, 83%, 0.995);
+  box-shadow: 0 10px 50px 50px hsla(123, 66%, 83%, 0.995);
+
+  transition: opacity .32s ease-out;
+  -webkit-transition: opacity .32s ease-out;
+  -moz-transition: opacity .32s ease-out;
+  -ms-transition: opacity .32s ease-out;
+  -o-transition: opacity .32s ease-out;
+
+  opacity: 1;
+}
+
+.disappear {
+  opacity: 0;
+}
+
+#oscillator {
+  position: absolute;
+	height: 200px;
+	width: 100%;
+
+}

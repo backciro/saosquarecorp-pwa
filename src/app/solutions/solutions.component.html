@@ -1,0 +1,47 @@
+<div *ngIf="lockContent" class="inside_container">
+  <div class="flex">
+    <div class="loader">
+    </div>
+  </div>
+  <div class="load-text">
+    Loading ...
+  </div>
+</div>
+
+<div class="fadebox" [hidden]="lockContent">
+  <div class="titletab">solutions</div>
+
+  <div class="intro_solution">
+    <p class="main_solution">
+      extended business network.
+    </p>
+  </div>
+
+  <div class="solutions_container">
+    <div class="competence_box">
+      <ul class="competence_list">
+        <li class="solution" routerLink="webit">
+          <a>WEB I-T </a>
+          <img src="../../assets/images/gif/wrd.gif" class="world_web_circle">
+        </li>
+        <li class="solution" routerLink="beatcookin">
+          <a style="font-family: beats;">BeatCooking</a>
+          <img src="../../assets/images/gif/cd-animated.gif" class="world_web">
+        </li>
+        <li class="solution_disabled">
+          <a style="font-family: business;">Marketing &amp; Business</a>
+          <img src="../../assets/images/gif/dollar.gif" class="world_web">
+        </li>
+        <li class="solution_disabled">
+          <a style="font-family: cinema;">Media Productions</a>
+          <img src="../../assets/images/gif/cine.gif" class="world_web">
+        </li>
+        <li class="solution" routerLink="bigdistribution">
+          <a style="font-family: bigdis;">Big Distribution</a>
+          <img src="../../assets/images/gif/Cube.gif" class="world_web">
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

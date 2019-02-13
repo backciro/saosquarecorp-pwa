@@ -1,0 +1,20 @@
+<div class="BigDistNewFormContainer">
+  <mat-form-field class="titleBD">
+    <input matInput placeholder="Item Name" [(ngModel)]="pName">
+  </mat-form-field>
+  <mat-form-field class="priceBD">
+    <input matInput type="number" placeholder="Item Price" [(ngModel)]="pPrice">
+  </mat-form-field>
+  <mat-form-field class="qtyBD">
+    <input matInput type="number" placeholder="Quantity" [(ngModel)]="pQty">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" class="coverButton" type="button" md-button (click)="imgFileInput.click()" aria-placeholder="Add Image" [value]="imageSrc">
+    <span #coverPlaceH *ngIf="!imageSrc">Upload Image</span>
+    <img *ngIf="imageSrc" id="coverEuroCreate" [src]="imageSrc" [alt]="pName" />
+  </button>
+  <input hidden type="file" #imgFileInput (change)="previewImage($event)"/>
+
+  <!-- <div class="btnContainerNewTape"></div> -->
+  <button mat-raised-button color="primary" class="btnNewEuro" type="button" (click)="save()">Save</button>
+</div>

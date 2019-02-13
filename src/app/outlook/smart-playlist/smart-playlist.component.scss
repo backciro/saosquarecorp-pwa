@@ -1,0 +1,53 @@
+vg-player {
+  background-color: transparent;
+
+  &:hover{
+    vg-controls{
+      opacity: 1;
+    }
+  }
+}
+
+vg-controls {
+  transition: opacity .3s ease-in-out;
+  -webkit-transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -ms-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+
+  opacity: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-family: styled;
+  text-align: center;
+}
+
+ul li {
+  padding: 15px 0;
+  cursor: pointer;
+  width: 100%;
+  margin: auto;
+
+  transition: background .32s ease-out;
+  -webkit-transition: background .32s ease-out;
+  -moz-transition: background .32s ease-out;
+  -ms-transition: background .32s ease-out;
+  -o-transition: background .32s ease-out;
+}
+
+ul li.selected {
+  background-color: rgba(0,0,0,.2);
+}
+
+ul li:hover {
+  background-color: rgba(0,0,0,.1);
+
+}
+
+#singleVideo {
+  width: 100%;
+}

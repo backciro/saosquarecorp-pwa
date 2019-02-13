@@ -1,0 +1,18 @@
+
+<div *ngIf="lockContent" class="inside_container">
+  <div class="flex">
+    <div class="loader">
+    </div>
+  </div>
+  <div class="load-text_inside">
+    Loading ...
+  </div>
+</div>
+
+<div class="fadebox" *ngIf="!lockContent">
+  <div class="titletab" id="euromafia_tt">euromafia</div>
+
+  <app-swiper [products]="products"></app-swiper>
+
+  <!-- <app-lava-lamp></app-lava-lamp> -->
+</div>

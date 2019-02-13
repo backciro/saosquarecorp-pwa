@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+@import './app/app.component.scss';
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  overflow-y: hidden;
+}
+
+* {
+  overflow-x: no-scroll;
+  outline: none;
+
+  &:active {
+  outline: none;
+  }
+}
+*:focus {
+  outline: none;
+}
+
+@font-face {
+  font-family: 'alarm-clock';
+  src: url('assets/fonts/alarm.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'styled';
+  src: url('assets/fonts/emono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'crook';
+  src: url('assets/fonts/quantico.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: cinema;
+  src: url('assets/fonts/Cinema.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: business;
+  src: url('assets/fonts/business.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: beats;
+  src: url('assets/fonts/beats.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: bigdis;
+  src: url('assets/fonts/bigdis.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
