@@ -51,8 +51,9 @@ mat-form-field{
 
 .btnNewEuro {
   margin-bottom: 10px;
-  color: darken(whitesmoke, 15%);
   font-family: Courier;
   width: 100%;
+  color: invert(darken(whitesmoke, 15%));
+  background-color: rgba(254, 86, 86, 0.795);
 }
 

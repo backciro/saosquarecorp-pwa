@@ -29,6 +29,8 @@ export class OutlookComponent implements OnInit {
     this.playlist = this.outlookServ.getPlaylist();
     this.images = this.outlookServ.getGallery();
 
-    this.lockContent = false;
+    setTimeout(() => {
+      this.lockContent = false;
+    }, 350);
   }
 }

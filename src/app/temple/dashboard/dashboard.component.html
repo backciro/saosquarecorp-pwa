@@ -1,4 +1,4 @@
-<mat-card *ngFor="let ent of entities" [routerLink]="'/templebank/dashboard/new'+ent.toLowerCase()" [class]="classRoute === ent.toLowerCase() ? 'dashCard card' + ent + ' dashActive' : 'dashCard card' + ent" (click)="onClick(ent)">
+<mat-card *ngFor="let ent of entities" [routerLink]="'/templebank/dashboard/' + ent.toLowerCase()" [class]="(classRoute === ent.toLowerCase() ? 'dashCard card' + ent + ' dashActive' : 'dashCard card' + ent) + (ent.toLowerCase() === 'partner' ? ' dashCard_' : '')" (click)="onClick(ent)">
   <mat-card-header>
     <mat-card-title>new {{ent}}</mat-card-title>
   </mat-card-header>
@@ -6,4 +6,4 @@
 
 <app-dashboard-router></app-dashboard-router>
 
-<button mat-raised-button class="logoutBtn" (click)="logout()" color="red">Logout</button>
+<button *ngIf="route === 'dashboard'" mat-raised-button class="logoutBtn" (click)="logout()" color="red">Logout</button>

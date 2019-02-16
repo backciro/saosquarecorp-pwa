@@ -11,9 +11,9 @@ export class SolutionsComponent implements OnInit {
   lockContent = true;
 
   ngOnInit() {
-    this.lockContent = false;
-
+    
     setTimeout(() => {
+      this.lockContent = false;
     }, 150);
   }
 

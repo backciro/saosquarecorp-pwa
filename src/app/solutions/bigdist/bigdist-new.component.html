@@ -11,10 +11,10 @@
 
   <button mat-raised-button color="primary" class="coverButton" type="button" md-button (click)="imgFileInput.click()" aria-placeholder="Add Image" [value]="imageSrc">
     <span #coverPlaceH *ngIf="!imageSrc">Upload Image</span>
-    <img *ngIf="imageSrc" id="coverEuroCreate" [src]="imageSrc" [alt]="pName" />
+    <img *ngIf="imageSrc" id="coverSolCreate" [src]="imageSrc" [alt]="pName" />
   </button>
   <input hidden type="file" #imgFileInput (change)="previewImage($event)"/>
 
   <!-- <div class="btnContainerNewTape"></div> -->
-  <button mat-raised-button color="primary" class="btnNewEuro" type="button" (click)="save()">Save</button>
+  <button mat-raised-button color="primary" class="btnNewSol" type="button" (click)="save()">Save</button>
 </div>

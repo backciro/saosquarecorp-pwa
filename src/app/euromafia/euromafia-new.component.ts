@@ -23,52 +23,78 @@ export class EuromafiaNewComponent implements OnInit {
     private uploadService: UploaderService,
     private activeRoute: ActivatedRoute,
     private router: Router,
-  ) {
-
-  }
-  formData: FormData;
-
-  imageSrc: string;
-  productName: string;
-  productDescription: string;
-  productPrice: number;
-  sizeAvailable: string;
-  quantityAvailable: number;
-  category: CATEGORY;
-
-  lockContent = true;
-
-  ngOnInit() {
-
-  }
-
-  previewImage(event) {
-    if (event.target.files && event.target.files[0]) {
-      const file = event.target.files[0];
-
-      const reader = new FileReader();
-      reader.onload = e => this.imageSrc = reader.result.toString();
-
-      reader.readAsDataURL(file);
-
-      let fileList: FileList = event.target.files;
-      if (fileList.length > 0) {
-
-        let fileCurrent: File = fileList[0];
-        let formData: FormData = new FormData();
-
-        formData.append('file', fileCurrent, fileCurrent.name);
-        this.formData = formData;
+    ) {
+      
+    }
+    formData: FormData;
+    
+    imageSrc: string;
+    productName: string;
+    productDescription: string;
+    productPrice: number;
+    sizeAvailable: string;
+    quantityAvailable: number;
+    category: CATEGORY;
+    
+    lockContent = true;
+    
+    ngOnInit() {
+      
+    }
+    
+    previewImage(event) {
+      if (event.target.files && event.target.files[0]) {
+        const file = event.target.files[0];
+        
+        const reader = new FileReader();
+        reader.onload = e => this.imageSrc = reader.result.toString();
+        
+        reader.readAsDataURL(file);
+        
+        let fileList: FileList = event.target.files;
+        if (fileList.length > 0) {
+          
+          let fileCurrent: File = fileList[0];
+          let formData: FormData = new FormData();
+          
+          formData.append('file', fileCurrent, fileCurrent.name);
+          this.formData = formData;
+        }
       }
     }
-  }
+    
+    hideHint(item) {
+      console.log(item);
+    }
+  
+      save() {
 
-  hideHint(item) {
-    console.log(item);
-  }
+        let model = {
+          productName: this.productName,
+          productDescription: this.productDescription,
+          productPrice: this.productPrice,
+          sizeAvailable: this.sizeAvailable,
+          quantityAvailable: this.quantityAvailable,
+          category: this.category,
+        };
+        
+        if (this.formData) {
+          this.formData.append('data', JSON.stringify(
+            {
+              'productName': model.productName,
+              'productDescription': model.productDescription,
+              'productPrice': model.productPrice,
+              'sizeAvailable': model.sizeAvailable,
+              'quantityAvailable': model.quantityAvailable,
+              'category': model.category,
+            })
+            );
+            
+            this.uploadService.uploader('E', this.formData);
+          } else {
+            console.log("ERROR!");
+          }
+      }
+      
+    }
 
-  save() {
-    this.uploadService.uploader('E', this.formData);
-  }
-
-}

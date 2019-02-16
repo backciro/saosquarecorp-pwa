@@ -127,14 +127,14 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 };
 
 const ROUTES: Routes = [
-  {path: 'templebank/dashboard/newproduct', component: DashboardComponent},
-  {path: 'templebank/dashboard/newpartner', component: DashboardComponent},
-  {path: 'templebank/dashboard/newbeat', component: DashboardComponent},
-  {path: 'templebank/dashboard/newmedia', component: DashboardComponent},
-  {path: 'templebank/dashboard/newwebsite', component: DashboardComponent},
-  {path: 'templebank/dashboard/newclothing', component: DashboardComponent},
-  {path: 'templebank/dashboard/newstory', component: DashboardComponent},
-  {path: 'templebank/dashboard/newtape', component: DashboardComponent},
+  {path: 'templebank/dashboard/product', component: DashboardComponent},
+  {path: 'templebank/dashboard/partner', component: DashboardComponent},
+  {path: 'templebank/dashboard/beat', component: DashboardComponent},
+  {path: 'templebank/dashboard/media', component: DashboardComponent},
+  {path: 'templebank/dashboard/website', component: DashboardComponent},
+  {path: 'templebank/dashboard/clothing', component: DashboardComponent},
+  {path: 'templebank/dashboard/story', component: DashboardComponent},
+  {path: 'templebank/dashboard/tape', component: DashboardComponent},
   {path: 'templebank/dashboard', component: DashboardComponent},
   {path: 'templebank', component: TempleComponent},
   {path: 'outlook', component: OutlookComponent},

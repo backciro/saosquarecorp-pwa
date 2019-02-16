@@ -23,54 +23,73 @@ export class OutlookNewComponent implements OnInit {
     private uploadService: UploaderService,
     private activeRoute: ActivatedRoute,
     private router: Router,
-  ) {
-
-  }
-  formData: FormData;
-
-  typeSelector:
+    ) {
+      
+    }
+    formData: FormData;
+    
+    typeSelector:
     { value: string, viewValue: string }[] = [
       { value: 'photo', viewValue: 'Photo' },
       { value: 'video', viewValue: 'Video' }
     ];
-
-  mediaSrc: string;
-  caption: string;
-  type: 'photo' | 'video';
-
-  lockContent = true;
-
-  ngOnInit() {
-
-  }
-
-  previewImage(event) {
-    if (event.target.files && event.target.files[0]) {
-      const file = event.target.files[0];
-
-      const reader = new FileReader();
-      reader.onload = e => this.mediaSrc = reader.result.toString();
-
-      reader.readAsDataURL(file);
-
-      let fileList: FileList = event.target.files;
-      if (fileList.length > 0) {
-
-        let fileCurrent: File = fileList[0];
-        let formData: FormData = new FormData();
-
-        formData.append('file', fileCurrent, fileCurrent.name);
-        this.formData = formData;
+    
+    mediaSrc: string;
+    caption: string;
+    type: 'photo' | 'video';
+    
+    lockContent = true;
+    
+    ngOnInit() {
+      
+    }
+    
+    previewImage(event) {
+      if (event.target.files && event.target.files[0]) {
+        const file = event.target.files[0];
+        
+        const reader = new FileReader();
+        reader.onload = e => this.mediaSrc = reader.result.toString();
+        
+        reader.readAsDataURL(file);
+        
+        let fileList: FileList = event.target.files;
+        if (fileList.length > 0) {
+          
+          let fileCurrent: File = fileList[0];
+          let formData: FormData = new FormData();
+          
+          formData.append('file', fileCurrent, fileCurrent.name);
+          this.formData = formData;
+        }
       }
     }
-  }
+    
+    hideHint(item) {
+      console.log(item);
+    }
+    
+    save() {
 
-  hideHint(item) {
-    console.log(item);
+      let model = {
+        mediaSrc: this.mediaSrc,
+        caption: this.caption,
+        type: this.type,
+      };
+      
+      if (this.formData) {
+        this.formData.append('data', JSON.stringify(
+          {
+            'mediaSrx': model.mediaSrc,
+            'caption': model.caption,
+            'type': model.type,
+          })
+          );
+          
+          this.uploadService.uploader('O', this.formData);
+        } else {
+          console.log("ERROR!");
+        }
+    }
+    
   }
-
-  save() {
-    this.uploadService.uploader('O', this.formData);
-  }
-
-}

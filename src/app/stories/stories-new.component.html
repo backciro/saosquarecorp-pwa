@@ -1,4 +1,4 @@
-<div class="TapesNewFormContainer">
+<div class="StoriesNewFormContainer">
 
   <mat-form-field>
     <input matInput [placeholder]="'Story Title'" [(ngModel)]="titleText">
@@ -10,12 +10,12 @@
 
   <button mat-raised-button color="primary" class="coverButton" type="button" md-button (click)="imgFileInput.click()" aria-placeholder="Add Image" [value]="imageSrc">
     <span #coverPlaceH *ngIf="!imageSrc">Add Image</span>
-    <img *ngIf="imageSrc" id="coverTapeCreate" [src]="imageSrc" [alt]="titleText" />
+    <img *ngIf="imageSrc" id="coverStoryCreate" [src]="imageSrc" [alt]="titleText" />
   </button>
   <input hidden type="file" #imgFileInput (change)="previewImage($event)"/>
 
-  <!-- <div class="btnContainerNewTape"></div> -->
-  <button mat-raised-button color="primary" class="btnNewTape" type="button" (click)="save()">Save</button>
+  <!-- <div class="btnContainerNewStory"></div> -->
+  <button mat-raised-button color="primary" class="btnNewStory" type="button" (click)="save()">Save</button>
 
 
 </div>

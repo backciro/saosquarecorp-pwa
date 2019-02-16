@@ -33,6 +33,7 @@ router-outlet{
 
   opacity: 0;
   transition: opacity .32s ease-out;
+  z-index: 1000;
   -webkit-transition: opacity .32s ease-out;
   -moz-transition: opacity .32s ease-out;
   -ms-transition: opacity .32s ease-out;

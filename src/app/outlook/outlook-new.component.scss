@@ -1,4 +1,4 @@
-.EuroNewFormContainer {
+.OutLNewFormContainer {
   display: block;
   width: 35%;
   margin: 1% 5%;
@@ -22,7 +22,7 @@ mat-form-field{
 }
 
 
-#coverEuroCreate {
+#coverOutLCreate {
   position: absolute;
   max-width: 100%;
   width: auto;
@@ -49,10 +49,11 @@ mat-form-field{
   }
 }
 
-.btnNewEuro {
+.btnNewOutL {
   margin-bottom: 10px;
-  color: darken(whitesmoke, 15%);
   font-family: Courier;
   width: 100%;
+  color: invert(darken(whitesmoke, 15%));
+  background-color: #efc7f9cb;
 }
 

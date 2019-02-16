@@ -15,50 +15,52 @@ export class BeatcookNewComponent implements OnInit {
     private uploadService: UploaderService,
     private activeRoute: ActivatedRoute,
     private router: Router,
-  ) {
-
-  }
-  formData: FormData;
-
-  mediaSrc: string;
-  title: string;
-  author: string;
-  price: number;
-  sold: boolean;
-
-  lockContent = true;
-
-  ngOnInit() {
-
-  }
-
-  previewImage(event) {
-    if (event.target.files && event.target.files[0]) {
-      const file = event.target.files[0];
-
-      const reader = new FileReader();
-      reader.onload = e => this.mediaSrc = reader.result.toString();
-
-      reader.readAsDataURL(file);
-
-      let fileList: FileList = event.target.files;
-      if (fileList.length > 0) {
-
-        let fileCurrent: File = fileList[0];
-        let formData: FormData = new FormData();
-
-        formData.append('file', fileCurrent, fileCurrent.name);
-        this.formData = formData;
+    ) {
+      
+    }
+    formData: FormData;
+    
+    mediaSrc: string;
+    title: string;
+    author: string;
+    price: number;
+    sold: boolean;
+    
+    lockContent = true;
+    
+    ngOnInit() {
+      
+    }
+    
+    previewImage(event) {
+      if (event.target.files && event.target.files[0]) {
+        const file = event.target.files[0];
+        
+        const reader = new FileReader();
+        reader.onload = e => this.mediaSrc = reader.result.toString();
+        
+        reader.readAsDataURL(file);
+        
+        let fileList: FileList = event.target.files;
+        if (fileList.length > 0) {
+          
+          let fileCurrent: File = fileList[0];
+          let formData: FormData = new FormData();
+          
+          formData.append('file', fileCurrent, fileCurrent.name);
+          this.formData = formData;
+        }
       }
     }
+    
+    hideHint(item) {
+      console.log(item);
+    }
+    
+    save() {
+      if (this.formData) {
+        this.uploadService.uploader('O', this.formData);
+      }
+    }
+    
   }
-
-  hideHint(item) {
-    console.log(item);
-  }
-
-  save() {
-    this.uploadService.uploader('O', this.formData);
-  }
-
-}

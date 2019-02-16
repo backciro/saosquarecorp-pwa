@@ -22,7 +22,7 @@ mat-form-field{
 }
 
 
-#coverEuroCreate {
+#coverSolCreate {
   position: absolute;
   max-width: 100%;
   width: auto;
@@ -49,10 +49,11 @@ mat-form-field{
   }
 }
 
-.btnNewEuro {
+.btnNewSol {
   margin-bottom: 10px;
-  color: darken(whitesmoke, 15%);
   font-family: Courier;
   width: 100%;
+  color: invert(darken(whitesmoke, 15%));
+  background-color: #65ccb5cb;
 }
 
