@@ -57,9 +57,31 @@ export class WebitNewComponent implements OnInit {
     }
     
     save() {
+      let model = {
+        logoSite: this.logoSite,
+        siteName: this.siteName,
+        clientName: this.clientName,
+        description: this.description,
+        technology: this.technology,
+        siteRef: this.siteRef
+      };
+      
       if (this.formData) {
-        this.uploadService.uploader('O', this.formData);
-      }
+        this.formData.append('data', JSON.stringify(
+          {
+            'logoSite': model.logoSite,
+            'siteName': model.siteName,
+            'clientName': model.clientName,
+            'description': model.description,
+            'technology': model.technology,
+            'siteRef': model.siteRef
+          }));
+          
+          this.uploadService.uploader('SW', this.formData).then(() => {
+            this.router.navigateByUrl('');
+          });
+        } else {
+          console.log("ERROR!");
+        }
     }
-    
   }

@@ -86,7 +86,9 @@ export class OutlookNewComponent implements OnInit {
           })
           );
           
-          this.uploadService.uploader('O', this.formData);
+          this.uploadService.uploader('O', this.formData).then(() => {
+            this.router.navigateByUrl('');
+          });
         } else {
           console.log("ERROR!");
         }

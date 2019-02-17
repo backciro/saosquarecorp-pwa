@@ -87,12 +87,12 @@ export class TapesComponent implements OnInit {
       this.loadTrackOrPlaylist(this.tapeService.getTape(), "track");
     }
 
-    this.lockContent = false;
     setTimeout(() => {
+      this.lockContent = false;
       setTimeout(() => {
         this.visualizer.draw();
       }, 25);
-    }, 25);
+    }, 250);
     }
 
   loadTrackOrPlaylist(data: Tape | TopTape, type: "track" | "album") {

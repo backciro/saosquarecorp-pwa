@@ -66,35 +66,37 @@ export class EuromafiaNewComponent implements OnInit {
     hideHint(item) {
       console.log(item);
     }
-  
-      save() {
-
-        let model = {
-          productName: this.productName,
-          productDescription: this.productDescription,
-          productPrice: this.productPrice,
-          sizeAvailable: this.sizeAvailable,
-          quantityAvailable: this.quantityAvailable,
-          category: this.category,
-        };
-        
-        if (this.formData) {
-          this.formData.append('data', JSON.stringify(
-            {
-              'productName': model.productName,
-              'productDescription': model.productDescription,
-              'productPrice': model.productPrice,
-              'sizeAvailable': model.sizeAvailable,
-              'quantityAvailable': model.quantityAvailable,
-              'category': model.category,
-            })
-            );
-            
-            this.uploadService.uploader('E', this.formData);
-          } else {
-            console.log("ERROR!");
-          }
+    
+    save() {
+      
+      let model = {
+        productName: this.productName,
+        productDescription: this.productDescription,
+        productPrice: this.productPrice,
+        sizeAvailable: this.sizeAvailable,
+        quantityAvailable: this.quantityAvailable,
+        category: this.category,
+      };
+      
+      if (this.formData) {
+        this.formData.append('data', JSON.stringify(
+          {
+            'productName': model.productName,
+            'productDescription': model.productDescription,
+            'productPrice': model.productPrice,
+            'sizeAvailable': model.sizeAvailable,
+            'quantityAvailable': model.quantityAvailable,
+            'category': model.category,
+          })
+          );
+          
+          this.uploadService.uploader('E', this.formData).then(() => {
+            this.router.navigateByUrl('');
+          });
+        } else {
+          console.log("ERROR!");
+        }
       }
       
     }
-
+    

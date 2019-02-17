@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
-    "build": "ng build --prod",
+    "build": "ng build --prod --output-hashing none; cp ./src/index.html ./dist/saosquarecorp/404.html;",
     "push": "gsutil rsync -d -rf ./dist/saosquarecorp/ gs://black-monitor-230519.appspot.com",
     "test": "ng test",
     "lint": "ng lint",

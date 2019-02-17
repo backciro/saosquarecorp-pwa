@@ -57,9 +57,27 @@ export class BigDistNewComponent implements OnInit {
     }
     
     save() {
+      let model = {
+        imageSrc: this.imageSrc,
+        pName: this.pName,
+        pPrice: this.pPrice,
+        pQty: this.pQty
+      };
+      
       if (this.formData) {
-        this.uploadService.uploader('O', this.formData);
-      }
+        this.formData.append('data', JSON.stringify(
+          {
+            'imageSrc': model.imageSrc,
+            'pName': model.pName,
+            'pPrice': model.pPrice,
+            'pQty': model.pQty
+          }));
+          
+          this.uploadService.uploader('SP', this.formData).then(() => {
+            this.router.navigateByUrl('');
+          });
+        } else {
+          console.log("ERROR!");
+        }
     }
-    
   }

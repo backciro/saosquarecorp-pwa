@@ -1,17 +1,19 @@
 .StoriesNewFormContainer {
-  display: grid;
+  display: block;
   width: 35%;
   margin: 1% 5%;
-
+  
   mat-form-field {
     filter: invert(100%);
+    width: 100%;
   }
 }
 
-mat-form-field{
+mat-form-field {
   font-family: Courier !important;
+  font-size: 14px;
+  line-height: 1.4;
 }
-
 
 #coverStoryCreate {
   position: absolute;
@@ -46,6 +48,7 @@ mat-form-field{
 .btnNewStory {
   margin-bottom: 10px;
   color: invert(darken(whitesmoke, 15%));
+  width: 100%;
   font-family: Courier;
   background-color: rgba(55, 153, 239, 0.795);
 }

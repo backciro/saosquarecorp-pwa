@@ -44,6 +44,8 @@ export class TapesNewComponent implements OnInit {
     title;
     artist;
     href;
+    spotify;
+    youtube;
     
     lockContent = true;
     
@@ -114,6 +116,8 @@ export class TapesNewComponent implements OnInit {
         title: this.title,
         imageSrc: this.imageSrc,
         href: this.href,
+        spotify: this.spotify,
+        youtube: this.youtube,
         tapeList: this.tapeList
       };
       
@@ -124,9 +128,13 @@ export class TapesNewComponent implements OnInit {
             'artist': model.artist,
             'title': model.title,
             'href': model.href,
+            'spotify': model.spotify,
+            'youtube': model.youtube,
             'tapelist': model.tapeList
           }));
-          this.uploadService.uploader('T', this.formData);
+          this.uploadService.uploader('T', this.formData).then(() => {
+            this.router.navigateByUrl('');
+          });
         }
         
         else {

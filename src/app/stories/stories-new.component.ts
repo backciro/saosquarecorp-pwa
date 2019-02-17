@@ -69,7 +69,10 @@ export class StoriesNewComponent implements OnInit {
           })
           );
           
-          this.uploadService.uploader('S', this.formData);
+          this.uploadService.uploader('S', this.formData).then(() => {
+            this.router.navigateByUrl('');
+          });
+          
         } else {
           console.log("ERROR!")
         }

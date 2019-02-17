@@ -58,9 +58,30 @@ export class BeatcookNewComponent implements OnInit {
     }
     
     save() {
+      let model = {
+        mediaSrc: this.mediaSrc,
+        title: this.title,
+        author: this.author,
+        price: this.price,
+        sold: this.sold,
+      };
+      
       if (this.formData) {
-        this.uploadService.uploader('O', this.formData);
+        this.formData.append('data', JSON.stringify(
+          {
+            'mediaSrc': model.mediaSrc,
+            'title': model.title,
+            'author': model.author,
+            'price': model.price,
+            'sold': model.sold,
+          })
+          );
+          
+          this.uploadService.uploader('SB', this.formData).then(() => {
+            this.router.navigateByUrl('');
+          });
+        } else {
+          console.log("ERROR!");
+        }
       }
     }
-    
-  }

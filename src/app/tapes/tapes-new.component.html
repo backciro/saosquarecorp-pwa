@@ -16,6 +16,14 @@
     <input matInput [placeholder]="selectedType === 'Tape' ? 'Tape Artist' : 'Album Artist'" [(ngModel)]="artist">
   </mat-form-field>
 
+  <mat-form-field>
+    <input matInput [placeholder]="'Spotify URI'" [(ngModel)]="spotify">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [placeholder]="'YouTube URL'" [(ngModel)]="youtube">
+  </mat-form-field>
+
   <button mat-raised-button color="primary" class="coverButton" [style]="selectedType === 'Album' ? doms.bypassSecurityTrustStyle('width:23%;') : doms.bypassSecurityTrustStyle('width:42%;')" type="button" md-button (click)="imgFileInput.click()" aria-placeholder="Add Cover" [value]="imageSrc">
     <span #coverPlaceH *ngIf="!imageSrc">Add Cover</span>
     <img *ngIf="imageSrc" id="coverTapeCreate" [src]="imageSrc" [alt]="title" />

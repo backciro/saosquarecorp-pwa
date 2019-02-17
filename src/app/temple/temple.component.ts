@@ -12,50 +12,52 @@ import { MatDialog } from '@angular/material'
 })
 
 export class TempleComponent implements OnInit {
-
+  
   constructor(
     private router: Router,
     private appState: AppStateService,
     private temple: TempleService
-  ) {
-    this.loggedUser = this.appState.getUser();
-   }
-
-   loggedUser: User;
-   username: string;
-   password: string;
-
-   lockContent = true;
-   showSpinner = false;
-
-  ngOnInit() {
-
-    if (this.loggedUser)
+    ) {
+      this.loggedUser = this.appState.getUser();
+    }
+    
+    loggedUser: User;
+    username: string;
+    password: string;
+    
+    lockContent = true;
+    showSpinner = false;
+    
+    ngOnInit() {
+      
+      if (this.loggedUser)
       this.router.navigateByUrl('templebank/dashboard');
-    else
+      else
       this.lockContent = false;
+    }
+    
+    login(): void {
+      this.showSpinner = true;
+      
+      try {
+        this.temple.authService(this.username, this.password).then(loggedUsr => {
+          
+          if (loggedUsr) {
+            console.log(loggedUsr);
+            
+            this.router.navigateByUrl('templebank/dashboard');
+            // let dbUser = new User();
+            
+            this.appState.setUser(loggedUsr);
+          }
+        });
+        setTimeout(() => {
+          this.showSpinner = false;
+        }, 500);
+        
+      } catch(e) {
+        console.log(e);
+      }
+    }
+    
   }
-
-  login(): void {
-    this.showSpinner = true;
-
-      this.temple.authService(this.username, this.password).then(loggedUsr => {
-        if (loggedUsr) {
-          console.log(loggedUsr);
-
-          let thenUsr = new User();
-          let date = new Date();
-
-          thenUsr.id = 0;
-          thenUsr.userName = 'root';
-          thenUsr.fullName = 'administrator';
-          thenUsr.lasta_access_date = date;
-          thenUsr.lasta_modify_date = date;
-
-          this.appState.setUser(thenUsr);
-          this.router.navigateByUrl('templebank/dashboard');
-        }
-      })
-
-  }
-}

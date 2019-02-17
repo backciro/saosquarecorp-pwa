@@ -16,7 +16,7 @@ export class UploaderService {
   apiTPpost = '/upload';
 
   uploader(
-    selector: 'T' | 'E' | 'O' | 'S',
+    selector: 'T' | 'E' | 'O' | 'S' | 'SB' | 'SP' | 'SW',
     formData: FormData
     ) {
 
@@ -37,6 +37,15 @@ export class UploaderService {
         break;
       case 'S':
         this.apiTPpost = '/stories' + this.apiTPpost;
+        break;
+      case 'SB':
+        this.apiTPpost = '/solutions/beat' + this.apiTPpost;
+        break;
+      case 'SP':
+        this.apiTPpost = '/solutions/product' + this.apiTPpost;
+        break;
+      case 'SW':
+        this.apiTPpost = '/solutions/website' + this.apiTPpost;
         break;
     }
 

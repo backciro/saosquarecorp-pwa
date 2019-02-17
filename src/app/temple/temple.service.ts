@@ -23,7 +23,8 @@ export class TempleService {
           return resolve(res);
       })
         .catch(err => {
-          console.log('ERROR IN DATA: ', err);
+          alert('invalid credentials');
+          console.log('AUTH ERROR: ', err);
       })
     });
     return P;
