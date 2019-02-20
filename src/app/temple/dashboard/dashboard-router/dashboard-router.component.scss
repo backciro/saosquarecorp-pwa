@@ -9,3 +9,12 @@ body {
   height: 60%;
   overflow: scroll;
 }
+@media screen and (max-width:555px) {
+  .dashboardRouter {
+    position: fixed;
+    top: 150px;
+    width: 100%;
+    height: 66.7%;
+    overflow: scroll;
+  }
+}

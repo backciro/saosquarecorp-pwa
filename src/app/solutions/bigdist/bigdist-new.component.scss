@@ -1,21 +1,30 @@
 .BigDistNewFormContainer {
   display: block;
-  width: 35%;
-  margin: 1% 5%;
-
+  width: 90%;
+  margin: auto;
+  
   mat-form-field {
     filter: invert(100%);
     width: 100%;
   }
+}
 
-  .priceEM {
-    width: 50%;
-  }
-  .quantityEM {
-    width: 50%;
-    float: left;
+.coverButton {
+  position: initial;
+  width: 100%;
+  margin: 10px 0;
+  height: 50px;
+  background-color: transparent;
+  overflow: hidden;
+  font-family: Courier;
+  font-size: 16px;
+  color: darken(whitesmoke, 15%);
+  
+  &:hover {
+    cursor: pointer;
   }
 }
+
 
 mat-form-field {
   font-family: Courier !important;
@@ -31,24 +40,7 @@ mat-form-field {
   left: 0;
   right: 0;
   margin: auto;
-  max-height: 90%;
-  top: 5%;
-}
-
-.coverButton {
-  position: fixed;
-  right: 5%;
-  width: 42%;
-  height: 40%;
-  background-color: transparent;
-  font-family: Courier;
-  font-size: 16px;
-  top: 255px;
-  color: darken(whitesmoke, 15%);
-
-  &:hover {
-    cursor: pointer;
-  }
+  top: -50%;
 }
 
 .btnNewSol {
@@ -59,3 +51,32 @@ mat-form-field {
   background-color: #65ccb5cb;
 }
 
+
+
+@media screen and (max-width:555px) {
+  .BigDistNewFormContainer {
+    display: block;
+    width: 90%;
+    margin: auto;
+    
+    mat-form-field {
+      width: 100%;
+    }
+  }
+  
+  .coverButton {
+    position: initial;
+    width: 100%;
+    margin: 10px 0;
+    height: 50px;
+    background-color: transparent;
+    font-family: Courier;
+    font-size: 16px;
+    color: darken(whitesmoke, 15%);
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+}

@@ -1,11 +1,42 @@
 .TapesNewFormContainer {
   display: block;
-  width: 35%;
-  margin: 1% 5%;
-
+  width: 90%;
+  margin: auto;
+  
   mat-form-field {
     filter: invert(100%);
     width: 100%;
+  }
+}
+
+.coverButton {
+  position: initial;
+  width: 50%;
+  margin: 10px 0;
+  height: 50px;
+  background-color: transparent;
+  overflow: hidden;
+  font-family: Courier;
+  font-size: 16px;
+  color: darken(whitesmoke, 15%);
+  
+  &:hover {
+    cursor: pointer;
+  }
+}
+.mp3Button {
+  position: initial;
+  overflow: hidden;
+  width: 50%;
+  margin: 10px 0;
+  height: 50px;
+  background-color: transparent;
+  font-family: Courier;
+  font-size: 16px;
+  color: darken(whitesmoke, 15%);
+  
+  &:hover {
+    cursor: pointer;
   }
 }
 
@@ -22,24 +53,7 @@ mat-form-field {
   left: 0;
   right: 0;
   margin: auto;
-  height: 90%;
-  top: 5%;
-}
-
-.coverButton {
-  position: fixed;
-  right: 5%;
-  width: 23%;
-  height: 40%;
-  background-color: transparent;
-  font-family: Courier;
-  font-size: 16px;
-  top: 255px;
-  color: darken(whitesmoke, 15%);
-
-  &:hover {
-    cursor: pointer;
-  }
+  top: -50%;
 }
 
 #coverMp3Create {
@@ -49,70 +63,77 @@ mat-form-field {
   left: 0;
   right: 0;
   margin: auto;
-  max-height: 90%;
-  top: calc(255px + 50%);
-}
-
-.mp3Button {
-  position: fixed;
-  right: 5%;
-  width: 23%;
-  height: 10%;
-  background-color: transparent;
-  font-family: Courier;
-  font-size: 16px;
-  top: 83%;
-  color: darken(whitesmoke, 15%);
-
-  &:hover {
-    cursor: pointer;
-  }
+  top: -50%;
 }
 
 .trackList {
-  position: absolute;
-  top: 10px;
-  left: 5%;
-  right: 0;
-  max-height: 39%;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 80%;
   margin: auto;
   -webkit-filter: invert(100%);
   filter: invert(100%);
   overflow: scroll;
-  margin-top: 5%;
-
-  overflow: scroll;
-
+  
   i:hover {
     cursor: pointer;
   }
 }
 
-.btnContainerNewTape{
-  position: absolute;
-}
 .btnNewTape {
   margin-bottom: 10px;
   font-family: Courier;
   width: 100%;
   color: invert(darken(whitesmoke, 15%));
   background-color: rgba(96, 224, 102, 0.795);
-    
 }
+
 .btnAddTrack {
-  position: absolute;
-  left: 5%;
   right: 0;
   top: 0;
-  margin: auto;
-  width: inherit;
+  color: darken(whitesmoke, 15%);
   background: transparent;
   font-family: Courier;
-  color: #303030;
-  filter: invert(100%);
+}
 
+@media screen and (max-width:555px) {
+  .TapesNewFormContainer {
+    display: block;
+    width: 90%;
+    margin: auto;
+    
+    mat-form-field {
+      width: 100%;
+    }
+  }
+  
+  .coverButton {
+    position: initial;
+    width: 50%;
+    margin: 10px 0;
+    overflow: hidden;
+    height: 50px;
+    background-color: transparent;
+    font-family: Courier;
+    font-size: 16px;
+    color: darken(whitesmoke, 15%);
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .mp3Button {
+    position: initial;
+    width: 50%;
+    margin: 10px 0;
+    height: 50px;
+    overflow: hidden;
+    background-color: transparent;
+    font-family: Courier;
+    font-size: 16px;
+    color: darken(whitesmoke, 15%);
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
   
 }

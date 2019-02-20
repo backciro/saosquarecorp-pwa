@@ -170,7 +170,7 @@ router-outlet{
   -o-transition: opacity .32s ease-out;
 }
 @media screen and (max-width:555px) {
-  .titletab {
+  .titletab, #euromafia_tt {
     font-size: 20px;
   }
 }

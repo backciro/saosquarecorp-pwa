@@ -1,4 +1,4 @@
-<div class="TapesNewFormContainer" [style]="selectedType === 'Album' ? doms.bypassSecurityTrustStyle('width:25%;') : doms.bypassSecurityTrustStyle('width:35%;')" >
+<div class="TapesNewFormContainer">
   <mat-form-field>
     <select matNativeControl placeholder="Select Type" [(ngModel)]="selectedType" name="atselector">
       <!-- <option value="" selected></option> -->
@@ -7,51 +7,51 @@
       </option>
     </select>
   </mat-form-field>
-
+  
   <mat-form-field>
     <input matInput [placeholder]="selectedType === 'Tape' ? 'Tape Title' : 'Album Title'" [(ngModel)]="title">
   </mat-form-field>
-
+  
   <mat-form-field>
     <input matInput [placeholder]="selectedType === 'Tape' ? 'Tape Artist' : 'Album Artist'" [(ngModel)]="artist">
   </mat-form-field>
-
+  
   <mat-form-field>
     <input matInput [placeholder]="'Spotify URI'" [(ngModel)]="spotify">
   </mat-form-field>
-
+  
   <mat-form-field>
     <input matInput [placeholder]="'YouTube URL'" [(ngModel)]="youtube">
   </mat-form-field>
-
-  <button mat-raised-button color="primary" class="coverButton" [style]="selectedType === 'Album' ? doms.bypassSecurityTrustStyle('width:23%;') : doms.bypassSecurityTrustStyle('width:42%;')" type="button" md-button (click)="imgFileInput.click()" aria-placeholder="Add Cover" [value]="imageSrc">
+  
+  <button mat-raised-button color="primary" class="coverButton" type="button" md-button (click)="imgFileInput.click()" aria-placeholder="Add Cover" [value]="imageSrc">
     <span #coverPlaceH *ngIf="!imageSrc">Add Cover</span>
     <img *ngIf="imageSrc" id="coverTapeCreate" [src]="imageSrc" [alt]="title" />
   </button>
   <input hidden type="file" name="tapecover" #imgFileInput (change)="previewImage($event)"/>
-
-  <button mat-raised-button color="primary" class="mp3Button" [style]="selectedType === 'Album' ? doms.bypassSecurityTrustStyle('width:23%;') : doms.bypassSecurityTrustStyle('width:42%;')" type="button" md-button (click)="mp3FileInput.click()" aria-placeholder="Add MP3">
-    <span *ngIf="!mp3Src">Add MP3</span>
+  
+  <button mat-raised-button color="primary" class="mp3Button" type="button" md-button (click)="mp3FileInput.click()" aria-placeholder="Add MP3">
+    <span *ngIf="!mp3Src && selectedType === 'Tape'">Add MP3</span>
+    <span *ngIf="!mp3Src && selectedType === 'Album'">Add .zip</span>
     <span *ngIf="mp3Src" id="mp3TapeCreate" style="font-size: 9px;">src: {{mp3Src}}</span>
   </button>
   <input hidden type="file" name="tapemp3" #mp3FileInput (change)="loadMp3($event)"/>
-
-<!-- <mat-form-field> -->
-  <mat-list *ngIf="selectedType === 'Album'" class="trackList" dense>
-    <mat-list-item *ngFor="let t of tapeList">
-      <input matInput placeholder="Title" [(ngModel)]="t.titleList">
-      <input matInput placeholder="Artist" [(ngModel)]="t.artistList">
-      <i aria-hidden="true" (click)="deleteItem(t)">
-        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-        <path fill="#000000" d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" />
-        </svg>
-      </i>
-    </mat-list-item>
-  </mat-list>
-  <button mat-raised-button color="primary" class="btnNewTape btnAddTrack" *ngIf="selectedType === 'Album'" type="button" (click)="addTrack()">Add Track</button>
-
-  <div class="btnContainerNewTape"></div>
-  <button mat-raised-button color="primary" class="btnNewTape" type="button" (click)="save()">Save</button>
-<!-- </mat-form-field> -->
-
-</div>
+  
+  <!-- <mat-form-field> -->
+    <button mat-raised-button color="primary" class="btnNewTape btnAddTrack" *ngIf="selectedType === 'Album'" type="button" (click)="addTrack()">Add Track</button>
+    <mat-list *ngIf="selectedType === 'Album'" class="trackList" dense>
+      <mat-list-item *ngFor="let t of tapeList">
+        <input matInput placeholder="Title" [(ngModel)]="t.titleList">
+        <input matInput placeholder="Artist" [(ngModel)]="t.artistList">
+        <i aria-hidden="true" (click)="deleteItem(t)">
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="#000000" d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" />
+          </svg>
+        </i>
+      </mat-list-item>
+    </mat-list>
+    
+    <button mat-raised-button color="primary" class="btnNewTape" type="button" (click)="save()">Save</button>
+    <!-- </mat-form-field> -->
+    
+  </div>

@@ -15,7 +15,7 @@
     position: absolute;
     text-align: center;
     left: 0;
-    bottom: 12px;
+    bottom: -105px;
     right: 0;
   }
 }
@@ -49,13 +49,13 @@
     margin-bottom: 42px;
     height: 2px;
     border-radius: 2px;
-    width: 95%;
+    width: 100%;
     border: 0;
   }
 
   .productBox1 {
     margin-top: 36px;
-    margin-left: 5%;
+    margin-left: 0px;
 
     &>div {
       text-align: justify;
@@ -151,7 +151,7 @@
 @media screen and (max-width:555px) {
   .buttonBuy {
     display: flex !important;
-    width: 95%;
+    width: 100%;
     text-align: center;
     justify-content: center;
     margin: auto;
