@@ -1,9 +1,8 @@
 <div class="BeatNewFormContainer">
   <mat-form-field>
-    <select matNativeControl placeholder="Select Genre" name="typeSelector">
-      <option value="">
-      </option>
-      <option value="">
+    <select matNativeControl placeholder="Select Genre" name="genreSelector">
+      <option *ngFor="let v of genres" [value]="v.value">
+          {{v.value}}
       </option>
     </select>
   </mat-form-field>

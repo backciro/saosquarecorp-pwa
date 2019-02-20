@@ -24,7 +24,36 @@ export class DashboardComponent implements OnInit, OnChanges {
         if (res.length != 0) {
           this.route = res[res.length - 1].path;
           this.classRoute = this.route.replace('new','');
-          this.entities = ['Tape', 'Story', 'Clothing', 'Partner', 'Beat', 'Media', 'Product', 'WebSite'];
+          console.log(this.loggedUser.role);
+           
+          switch(this.loggedUser.role) {
+            case 'R_CEO':
+            this.entities = ['Tape', 'Story', 'Clothing', 'Partner', 'Beat', 'Media', 'Product', 'WebSite'];
+            break;
+            case 'R_CRTR':
+            this.entities = ['Story', 'Media'];
+            break;
+            case 'R_CSTMR':
+            this.entities = ['Story'];
+            break;
+            case 'R_DSGNR':
+            this.entities = ['Story', 'Clothing'];
+            break;
+            case 'R_DSPTCHR':
+            this.entities = ['Story', 'Product'];
+            break;
+            case 'R_SQR':
+            this.entities = ['Story'];
+            break;
+            case 'R_TRPSTR':
+            this.entities = ['Tape', 'Story', 'Beat'];
+            break;
+            default:
+            this.entities = [];
+            break;
+            
+          }
+          
         }
       });
     }

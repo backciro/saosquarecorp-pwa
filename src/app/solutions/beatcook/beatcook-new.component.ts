@@ -19,6 +19,16 @@ export class BeatcookNewComponent implements OnInit {
       
     }
     formData: FormData;
+    genreSelector;
+
+    genres = [
+      { value: "Trap" },
+      { value: "Rap" },
+      { value: "R n B" },
+      { value: "Soul" },
+      { value: "HipHop" },
+      { value: "Old School" }
+    ];
     
     mediaSrc: string;
     title: string;

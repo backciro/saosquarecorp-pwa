@@ -47,8 +47,12 @@ export class TempleComponent implements OnInit {
             
             this.router.navigateByUrl('templebank/dashboard');
             // let dbUser = new User();
+            let clntUst = {
+              role: 'R_CEO',
+              user: loggedUsr
+            }
             
-            this.appState.setUser(loggedUsr);
+            this.appState.setUser(clntUst);
           }
         });
         setTimeout(() => {

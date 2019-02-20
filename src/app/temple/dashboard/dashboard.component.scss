@@ -57,20 +57,35 @@ body {
   
   button {
     margin: auto;
-    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
   }
 }
 @media screen and (max-width:555px) {
   .hamburger {
     display: block;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);    
+    button {
+      border-radius: 5px;
+      width: 90%;
+      box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);    
+    }
   }
+
   .mat-menu-content {
-    margin: auto !important;
+    position: fixed !important;
     left: 0 !important;
-    right: 0 !important;
-    position: absolute !important;
-    background: rgba(250,255,255,.4) !important;
+    max-height: 50%;
+    overflow: scroll;
+    background: invert(rgba(0,0,0,.2)) !important;
     border-radius: 5px !important;
+    width: 90%;
+    margin: auto;
+    margin-left: 5%;
+    margin-top: 3%;
+    
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);    
     
     transition: opacity .2s ease-out;
     -webkit-transition: opacity .2s ease-out;
@@ -80,8 +95,9 @@ body {
     
     button {
       text-align: center !important;
+      
       span {
-        background-color: rgba(rebeccapurple, .7);
+        background-color: #593d76b3;
         color: darken(whitesmoke, 15%);
         
         line-height: 3;
@@ -93,6 +109,8 @@ body {
         display: inline-block;
         text-align: center;
         margin: auto;
+        box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);    
+        
       }
     }
   }
@@ -131,14 +149,13 @@ body {
 .logoutBtn {
   position: fixed !important;
   bottom: 50px;
-  margin: auto;
+  margin: auto !important;
   left: 0;
   right: 0;
-  text-align: center;
   justify-content: center;
-  width: 100%;
+  width: 90%;
   background: transparent;
-  color: darken(whitesmoke, 15%);
+  color: #cfcfcf;
   font-family: Courier, monospace;
   
   &:hover {

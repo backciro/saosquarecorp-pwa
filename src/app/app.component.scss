@@ -218,6 +218,8 @@ router-outlet{
   -ms-transition: filter .32s ease-out;
   -o-transition: filter .32s ease-out;
 
+  z-index: 100000;
+
   &:hover {
     cursor: pointer;
   }
